@@ -65,11 +65,34 @@ test("Reverse String", async () => {
 })
 
 
-test.only("Reverse Array", async () => {
+test("Reverse Array", async () => {
   function reverseArray(arr) {
     return arr.reverse('');
   }
   let numbers = [90, 80, 70, 60];
   let reverse = reverseArray(numbers);
   console.log(reverse);
+})
+
+
+test("Even number", async()=> {
+ function evennumber (array) {
+   return array.filter(number => number %2 ===0)
+ }
+  let number = [25,30,40,57,89];
+  let result = evennumber(number);
+  console.log(result);
+
+})
+
+
+test.only ("Max Number", async () => {
+ function maxnumber(number){
+    return Math.max(...number);
+ }
+  let numbers = [78,89,456,675];
+  let result = maxnumber(numbers);
+  console.log(result);
+
+
 })
