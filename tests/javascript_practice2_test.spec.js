@@ -1,11 +1,11 @@
-const {test,expect} =require ('@playwright/test')
+const {test,expect} = require ('@playwright/test')
 
-test("replace", async () => {
-const replacestring = (str,index,replacement) => {
-   return str.slice(0,index) + replacement + str.slice(index + replacement.length)
+test("Replace",async() => {
+const replaceString = (str,index,replacement) => {
+return str.slice(0,index) + replacement + str.slice(index + replacement.length);
 }
-const originalvalue = ("Stanley CHristopher")
-let newString = replacestring(originalvalue,8,"Vijay")
-console.log(newString);
+const originalvalue = ("stanley christopher")
+const newValue = replaceString(originalvalue,8,"The King   ")
+console.log(newValue);
 
 })
