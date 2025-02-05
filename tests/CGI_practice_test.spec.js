@@ -145,13 +145,24 @@ test("Duplicate value",async() => {
     console.log(result)
 })
 
-test.only("CountOccurences", async() => {
-    function occurence(occ) {
-        return occ.reduce((acc,value) => {
-            acc[value] = (acc[value] || 0) + 1
-        return acc; 
+// //test.only("CountOccurences", async() => {
+//     function occurence(occ) {
+//         return occ.reduce((acc,value) => {
+//             acc[value] = (acc[value] || 0) + 1
+//         return acc; 
+//         },{})
+//     }
+//     let result = occurence([89,89,67,56,67])
+//     console.log(result)
+// })
+
+test.only("Occurence", async() => {
+    function CountOccurence(occ) {
+        return occ.reduce((scs,value) => {
+            scs[value] = (scs[value] || 0)+ 1
+        return scs
         },{})
     }
-    let result = occurence([89,89,67,56,67])
+    let result = CountOccurence([90,78,67,89,90,67,78,78,78,90,90,89,56]);
     console.log(result)
 })
