@@ -156,7 +156,7 @@ test("Duplicate value",async() => {
 //     console.log(result)
 // })
 
-test.only("Occurence", async() => {
+test ("Occurence", async() => {
     function CountOccurence(occ) {
         return occ.reduce((scs,value) => {
             scs[value] = (scs[value] || 0)+ 1
@@ -165,4 +165,52 @@ test.only("Occurence", async() => {
     }
     let result = CountOccurence([90,78,67,89,90,67,78,78,78,90,90,89,56]);
     console.log(result)
+})
+
+test("DuplicateValue", async() =>{
+    function Duplicate(dup){
+        return dup.filter((value,index,array) => array.indexOf(value) == index)
+    }
+    let result = Duplicate([56,56,78,34,56,78,34,64])
+    console.log(result)
+})
+
+test("ReverseNew", async() => {
+    function reverseNew(revN){
+        return revN.split('').reverse().join('')
+    }
+    let result = reverseNew("Great place to work is just a lie")
+    console.log(result)
+})
+
+
+test("ReverseWord", async() => {
+    function reverseWord(rword){
+        return rword.split(' ')
+                    .map(word => word.split('').reverse().join(''))
+                    .join(' ')
+    }
+    let result = reverseWord("The attempt for a success needs an attempt of failure")
+    console.log(result)
+})
+
+test ("SumOfNum",async() => {
+    function sumOfnum(som) {
+        return som.reduce((acc,current) => acc+current, 0)
+    }
+    let result = sumOfnum([90,67,45,432,3454])
+    console.log(result)
+})
+
+test.only ("OccurenceNew", async() => {
+    function occNew(ocn){
+        return ocn.reduce((acv,value) => {
+            acv[value] = (acv[value] || 0) + 1
+            return acv 
+        },{})
+        
+    }
+    let result = occNew(['Stanley','Stanley','Lijo','Sureka','aarick','Sureka'])
+    console.log(result)
+   
 })
