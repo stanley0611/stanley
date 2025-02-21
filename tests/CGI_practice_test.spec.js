@@ -202,7 +202,7 @@ test ("SumOfNum",async() => {
     console.log(result)
 })
 
-test.only ("OccurenceNew", async() => {
+test ("OccurenceNew", async() => {
     function occNew(ocn){
         return ocn.reduce((acv,value) => {
             acv[value] = (acv[value] || 0) + 1
@@ -213,4 +213,24 @@ test.only ("OccurenceNew", async() => {
     let result = occNew(['Stanley','Stanley','Lijo','Sureka','aarick','Sureka'])
     console.log(result)
    
+})
+
+test.only ("lastPromise", async() => {
+    function lastPromise(){
+    return lastPromise = new Promise(function(resolve,reject) {
+        let x =90
+        if (x==90){
+            return resolve ("The value is Okay")
+        }else{
+            return reject ("The value is not okay")
+        }
+    })
+}
+lastPromise()
+.then(function(value){
+    console.log(value)
+})
+.catch(function(error){
+    console.log(error)
+})
 })
