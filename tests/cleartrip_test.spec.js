@@ -22,3 +22,6 @@ test("ClearTrip", async ({ page }) => {
 
     await page.locator('//div[data-testid="dateSelectOnward"]').click()
 })
+
+
+await page.getByRole('button', {text:"not-interested"}).click()

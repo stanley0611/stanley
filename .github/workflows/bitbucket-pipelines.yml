@@ -1,0 +1,19 @@
+image: node:16  # Use the official Node.js image
+
+pipelines:
+  default:
+    - step:
+        name: Install dependencies and run Playwright tests
+        caches:
+          - node
+        script:
+          - echo "Install dependencies"
+          - npm install
+          - echo "Install Playwright browsers"
+          - npx playwright install
+          - echo "Run Playwright tests"
+          - npm run test  # Ensure this script runs your Playwright tests
+        artifacts:
+          - test-results/**  # Save HTML test reports
+          - videos/**  # Save videos of the test runs
+          - screenshots/**  # Save screenshots of failed tests

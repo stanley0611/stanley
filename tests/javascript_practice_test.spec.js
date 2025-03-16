@@ -1,4 +1,4 @@
-const{test,expect} = require ('@playwright/test')
+const{test,expect, chromium} = require ('@playwright/test')
 
 test ("Maximum", async() => {
 let numbers = ([78,98,56,45]);
@@ -131,7 +131,7 @@ test("Addition", async() =>{
     console.log(result)
 })
 
-test.only("FruitOccurence", async() => {
+test("FruitOccurence", async() => {
     function countfruit(cft){
         return cft.reduce((count,currentvalue) =>{
           if (count[currentvalue]){
@@ -144,4 +144,92 @@ test.only("FruitOccurence", async() => {
     }
     let result = countfruit(['Apple','Orange','Melons','Apple'])
     console.log(result)
+})
+
+test.only("Sum_of_two_values",async() =>{
+let result = [1,2,3,]
+let result_2 =  [7,8,9]
+
+function addition(add){
+  return add.reduce((sum,currentvalue) => {
+      return sum+currentvalue
+  },0)
+ 
+}
+let final_result = addition([...result, ...result_2])
+console.log(final_result)
+})
+
+
+// function occurence(occr){
+//     return occr.split('').reduce((letter,currentvalue) => {
+//         if (letter[currentvalue]){
+//             letter[currentvalue] +=1
+//         }else{
+//             letter[currentvalue] =1
+//         }
+//          return letter
+//     },{})
+   
+// }
+// let result_2 = occurence("stanley christopher")
+// console.log(result_2)
+
+
+// function secondbiggest(secb){
+//     let secondmax = [...new Set(secb)].sort((a,b) =>(b-a))
+//     return secondmax
+// }
+// let result = secondbiggest([67,67,89,89,34,23,89,12,55])
+// console.log(result)
+
+// function occurence(...occr){
+//     return occr.join('').split('').reduce((letter,repeated) => {
+//         if (letter[repeated]){
+//             letter[repeated] +=1
+//         }else{
+//             letter[repeated] =1
+//         }
+//         return letter
+//     },{})
+// }
+// let results = occurence(["Stanley","Christopher","Sureka","Lijo Aarick"])
+// console.log(results)
+
+
+let name = "stanley christopher"
+function occurence(occur){
+    return occur.split('').reduce((newvalue,currentvalue) =>{
+        if(newvalue[currentvalue]){
+            newvalue[currentvalue] +=1
+        }else{
+            newvalue[currentvalue] = 1
+        }
+        return newvalue
+    },{})
+}
+let result = occurence(name)
+console.log(result)
+
+test("sample test",async() => {
+    const browser = await chromium.launch()
+    const context = await browser.newcontext()
+    const page = await context.newpage()
+    await page.goto("https://google.com")
+    expect (page).toHaveUrl("")
+    await page.locator(getByLabel())
+})
+
+//fibbonacci series
+test("fibbonacc",async() => {
+    function fibonacci(fibbi){
+        if (fibbi <= 1){
+            return fibbi
+        }
+        return fibonacci(fibbi-1) + fibonacci(fibbi-2)
+    }
+    let n =15
+    for(let i = 0; i <n; i++){
+        console.log(fibonacci(i))
+    }
 })

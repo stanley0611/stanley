@@ -234,3 +234,17 @@ lastPromise()
     console.log(error)
 })
 })
+
+test("duplicate using for", async()=>{
+let x = [67,89,56,345,34,67]
+let test = []
+let repeated = []
+for(let number of x){
+    if(!test.includes(number)){
+        test.push(number)
+    }else{
+        repeated.push(number)
+    }
+}
+console.log("Actual",test , "Duplicate",repeated)
+})
