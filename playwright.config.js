@@ -79,10 +79,3 @@ module.exports = defineConfig({
   // },
 });
 
-module.exports = {
-  reporter: [['html', { outputFolder: 'test-results', open: 'never' }]],
-  use: {
-    video: 'on',
-    screenshot: 'only-on-failure',
-  },
-};

@@ -233,3 +233,23 @@ test("fibbonacc",async() => {
         console.log(fibonacci(i))
     }
 })
+
+//Duplicate removal using for loop
+let numbers = [56,45,76,45,34,56]
+let test = []
+for (let value of numbers){
+    if(!test.includes(value)){
+        test.push(value)
+    }
+}
+console.log(test)
+
+// Palindrome check
+function palindrome(palin){
+    palin = palin.toLowerCase().replace(/[^a-z0-9]/g, '')
+
+    return palin === palin.split('').reverse('').join('')
+}
+    
+let result = palindrome("stanley") 
+console.log(result)
