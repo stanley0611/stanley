@@ -253,3 +253,12 @@ function palindrome(palin){
     
 let result = palindrome("stanley") 
 console.log(result)
+
+//Palindrome check using dynamic input
+function palindrome(palin){
+    palin = palin.toString().toLowerCase().replace(/[^a-z0-9]/g,"")
+    return palin === palin.split('').reverse().join('')
+}
+let input = prompt('Enter a value to find palindrome: ')
+let result = palindrome(input)
+console.log(result?`"${input}" is palindrome`: `"${input}" is not a palindrome`)

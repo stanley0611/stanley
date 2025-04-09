@@ -25,3 +25,9 @@ test('Sample API Test',async({request}) =>{
 
     expect(text).toContain('Product')
 })
+
+const{test,expect} = require('@playwright/test')
+test('test',async({page})=>{
+await page.goto("")
+await page.getBy
+})
